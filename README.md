@@ -1,7 +1,6 @@
 # 🍽️ Restaurant Website Demo
 
-A modern and fully responsive **restaurant website** built with **HTML, Tailwind CSS, and JavaScript**. This project was created as a portfolio/demo project to showcase frontend development skills, responsive web design, and modern UI implementation.
-
+A modern, responsive restaurant website built with HTML, Tailwind CSS, and JavaScript. Created as a frontend portfolio project to demonstrate clean UI design, responsive layouts, and interactive user experiences.
 ## 🌐 Live Demo
 
 🔗 **Live Website:** https://your-live-demo-link.com
