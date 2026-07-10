@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — OBSIDIAN Steakhouse</title>
+<meta name="description" content="A look inside OBSIDIAN — the dining room, the kitchen, the fire, and the plates that leave it.">
+<meta name="author" content="Farzana Yesmin">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23211B10'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%23B23A2E' font-family='Georgia,serif'%3EO%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gallery — OBSIDIAN Steakhouse (Concept Project)">
+<meta property="og:description" content="Inside the dining room, the kitchen, and the fire — a fictional steakhouse gallery.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1200&q=80">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&family=Dancing+Script:wght@600;700&family=Alex+Brush&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.unsplash.com">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="tailwind.browser.js"></script>
+<style>
+  /* ===== Sitewide scale + brand refinements ===== */
+  html{font-size:18px;}                 /* base size bump so all rem-based text reads larger */
+  body{line-height:1.65;}
+  .font-logo{ font-family:'Alex Brush', cursive; letter-spacing:0.5px; }
+</style>
+
+</head>
+<body class="bg-bg text-ink font-body font-normal antialiased">
+
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[10000] focus:bg-gold focus:text-white focus:px-5 focus:py-3 focus:rounded">Skip to main content</a>
+
+<div id="loader" class="fixed inset-0 z-[9999] bg-bg flex items-center justify-center transition-all duration-500">
+  <div class="flex flex-col items-center gap-4 font-logo text-5xl text-gold">
+    Obsidian
+    <div class="relative w-32 h-px bg-line overflow-hidden">
+      <span class="absolute left-[-40%] top-0 bottom-0 w-2/5 bg-gold animate-loaderSweep"></span>
+    </div>
+  </div>
+</div>
+
+<div id="scrollProgress" class="fixed top-0 left-0 h-[3px] bg-gold z-[1100] w-0"></div>
+<button id="backToTop" aria-label="Back to top" class="fixed right-6 bottom-6 md:right-8 md:bottom-8 z-[900] w-12 h-12 rounded-full bg-ink text-goldlight border border-gold/40 flex items-center justify-center opacity-0 invisible translate-y-3 transition-all duration-300 hover:bg-gold hover:text-white">↑</button>
+
+<!-- ================= NAVBAR ================= -->
+<nav id="navbar" class="fixed top-0 inset-x-0 z-50 bg-ink/85 backdrop-blur-md border-b border-white/10 shadow-md shadow-black/10 py-5 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between">
+    <a href="index.html" class="font-logo text-4xl text-white leading-none">Obsidian<span class="text-goldlight">.</span></a>
+    <ul class="hidden md:flex items-center gap-7 lg:gap-9 text-xs tracking-[2px] uppercase">
+      <li><a href="index.html" class="nav-link text-white/70 hover:text-goldlight transition">Home</a></li>
+      <li><a href="about.html" class="nav-link text-white/70 hover:text-goldlight transition">About</a></li>
+      <li><a href="menu.html" class="nav-link text-white/70 hover:text-goldlight transition">Menu</a></li>
+      <li><a href="gallery.html" class="nav-link text-goldlight transition">Gallery</a></li>
+      <li><a href="blog.html" class="nav-link text-white/70 hover:text-goldlight transition">Blog</a></li>
+      <li><a href="contact.html" class="nav-link text-white/70 hover:text-goldlight transition">Contact</a></li>
+      <li><a href="index.html#reservation" class="border border-goldlight text-goldlight px-5 py-2.5 hover:bg-goldlight hover:text-ink transition">Reserve</a></li>
+    </ul>
+    <button id="hamburger" class="md:hidden flex flex-col gap-1.5" aria-label="Menu">
+      <span class="w-6 h-px bg-white transition-transform"></span>
+      <span class="w-6 h-px bg-white transition-opacity"></span>
+      <span class="w-6 h-px bg-white transition-transform"></span>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden flex-col gap-6 bg-ink/95 backdrop-blur-md border-t border-white/10 px-6 py-8 mt-6 text-sm uppercase tracking-[2px]">
+    <a href="index.html" class="nav-link text-white/70">Home</a>
+    <a href="about.html" class="nav-link text-white/70">About</a>
+    <a href="menu.html" class="nav-link text-white/70">Menu</a>
+    <a href="gallery.html" class="nav-link text-goldlight">Gallery</a>
+    <a href="blog.html" class="nav-link text-white/70">Blog</a>
+    <a href="contact.html" class="nav-link text-white/70">Contact</a>
+    <a href="index.html#reservation" class="inline-block w-fit border border-goldlight text-goldlight px-5 py-2.5">Reserve</a>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- ================= PAGE HERO BANNER ================= -->
+<section class="pt-40 pb-20 md:pt-48 md:pb-24 bg-ink text-white relative overflow-hidden">
+  
+  <div class="absolute inset-0 z-0">
+    <img src="img/The lighting in this restaurant looks almost ethereal.jpg" alt="Luxury kitchen and gallery atmosphere" class="w-full h-full object-cover" loading="eager" fetchpriority="high">
+    <div class="absolute inset-0 bg-ink/65 backdrop-blur-[1px]"></div>
+  </div>
+
+  <div class="absolute -left-32 -top-32 w-96 h-96 rounded-full bg-gold/10 blur-3xl pointer-events-none z-1"></div>
+  <div class="absolute -right-24 bottom-0 w-72 h-72 rounded-full bg-gold/10 blur-3xl pointer-events-none z-1"></div>
+  
+  <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+    <span class="inline-flex items-center gap-2 text-goldlight text-xs tracking-[3px] uppercase mb-5">
+      <span class="w-1.5 h-1.5 rounded-full bg-goldlight"></span> Gallery
+    </span>
+    <h1 class="font-heading text-5xl md:text-6xl mb-3">Inside the <span class="font-script text-goldlight text-6xl md:text-7xl">Fire</span></h1>
+    <p class="text-white/70 text-lg leading-relaxed max-w-xl mx-auto">If a picture says a thousand words, imagine how long it'd take to describe every plate that leaves this kitchen.</p>
+  </div>
+</section>
+
+<!-- ================= FILTERABLE GRID ================= -->
+<section class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="flex flex-wrap justify-center gap-3 mb-14">
+      <button class="filter-btn bg-gold text-white border border-gold px-6 py-2.5 text-xs tracking-[2px] uppercase transition" data-filter="all">All Photos</button>
+      <button class="filter-btn border border-line text-stone px-6 py-2.5 text-xs tracking-[2px] uppercase transition hover:border-gold hover:text-gold" data-filter="dining">Dining Room</button>
+      <button class="filter-btn border border-line text-stone px-6 py-2.5 text-xs tracking-[2px] uppercase transition hover:border-gold hover:text-gold" data-filter="kitchen">The Kitchen</button>
+      <button class="filter-btn border border-line text-stone px-6 py-2.5 text-xs tracking-[2px] uppercase transition hover:border-gold hover:text-gold" data-filter="dishes">Dishes</button>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="gallery-card reveal-el opacity-0 scale-95 transition-all duration-700 relative overflow-hidden group cursor-pointer h-64 md:h-72" data-category="dining">
+        <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=700&q=80" alt="The dining room" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5"><span class="font-script text-white text-2xl">Dining Room</span></div>
+      </div>
+      <div class="gallery-card reveal-el opacity-0 scale-95 transition-all duration-700 delay-100 relative overflow-hidden group cursor-pointer h-64 md:h-72" data-category="dishes">
+        <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=700&q=80" alt="Wagyu A5 Ribeye" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5"><span class="font-script text-white text-2xl">Wagyu Ribeye</span></div>
+      </div>
+      <div class="gallery-card reveal-el opacity-0 scale-95 transition-all duration-700 delay-150 relative overflow-hidden group cursor-pointer h-64 md:h-72" data-category="kitchen">
+        <img src="https://images.unsplash.com/photo-1560781290-7dc94c0f8f4f?w=700&q=80" alt="Steak searing on the grill" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5"><span class="font-script text-white text-2xl">Live Fire</span></div>
+      </div>
+      <div class="gallery-card reveal-el opacity-0 scale-95 transition-all duration-700 relative overflow-hidden group cursor-pointer h-64 md:h-72" data-category="dining">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80" alt="A set table" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5"><span class="font-script text-white text-2xl">Table Setting</span></div>
+      </div>
+      <div class="gallery-card reveal-el opacity-0 scale-95 transition-all duration-700 delay-100 relative overflow-hidden group cursor-pointer h-64 md:h-72" data-category="dishes">
+        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=700&q=80" alt="Tomahawk for two" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5"><span class="font-script text-white text-2xl">Tomahawk</span></div>
+      </div>
+      <div class="gallery-card reveal-el opacity-0 scale-95 transition-all duration-700 delay-150 relative overflow-hidden group cursor-pointer h-64 md:h-72" data-category="kitchen">
+        <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=700&q=80" alt="Dry-aging steak in the aging room" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5"><span class="font-script text-white text-2xl">Dry-Aging Room</span></div>
+      </div>
+      <div class="gallery-card reveal-el opacity-0 scale-95 transition-all duration-700 relative overflow-hidden group cursor-pointer h-64 md:h-72" data-category="dining">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=700&q=80" alt="The bar area" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5"><span class="font-script text-white text-2xl">The Bar</span></div>
+      </div>
+      <div class="gallery-card reveal-el opacity-0 scale-95 transition-all duration-700 delay-100 relative overflow-hidden group cursor-pointer h-64 md:h-72" data-category="dishes">
+        <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=700&q=80" alt="Filet Mignon Rossini" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5"><span class="font-script text-white text-2xl">Filet Rossini</span></div>
+      </div>
+      <div class="gallery-card reveal-el opacity-0 scale-95 transition-all duration-700 delay-150 relative overflow-hidden group cursor-pointer h-64 md:h-72" data-category="dining">
+        <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=700&q=80" alt="Private dining room" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5"><span class="font-script text-white text-2xl">Private Dining</span></div>
+      </div>
+      <div class="gallery-card reveal-el opacity-0 scale-95 transition-all duration-700 relative overflow-hidden group cursor-pointer h-64 md:h-72" data-category="kitchen">
+        <img src="https://images.unsplash.com/photo-1607631568010-a87245c0daf8?w=700&q=80" alt="Grill chef at work" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5"><span class="font-script text-white text-2xl">On the Line</span></div>
+      </div>
+      <div class="gallery-card reveal-el opacity-0 scale-95 transition-all duration-700 delay-100 relative overflow-hidden group cursor-pointer h-64 md:h-72" data-category="dishes">
+        <img src="https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?w=700&q=80" alt="Wine pairing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5"><span class="font-script text-white text-2xl">Wine Pairing</span></div>
+      </div>
+      <div class="gallery-card reveal-el opacity-0 scale-95 transition-all duration-700 delay-150 relative overflow-hidden group cursor-pointer h-64 md:h-72" data-category="kitchen">
+        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=700&q=80" alt="Chef plating a dish" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5"><span class="font-script text-white text-2xl">Finishing Touch</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA BANNER ================= -->
+<section class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="fade-up opacity-0 translate-y-8 transition-all duration-700 bg-ink text-white grid md:grid-cols-2 items-center overflow-hidden">
+      <div class="p-10 md:p-16">
+        <span class="inline-block text-goldlight text-xs tracking-[3px] uppercase mb-4">Ready to Visit</span>
+        <h2 class="font-heading text-3xl md:text-4xl mb-5">Like what you <em class="italic text-goldlight">see?</em></h2>
+        <p class="text-white/60 mb-8">Choose your evening, and we'll take care of the rest — from the first pour to the last plate.</p>
+        <a href="index.html#reservation" class="inline-block bg-goldlight text-ink px-8 py-4 text-xs tracking-[2.5px] uppercase hover:bg-white transition">Book a Table</a>
+      </div>
+      <img src="img/down(1).jpg" alt="Restaurant host" class="w-full h-72 md:h-full object-cover" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-bg border-t border-line pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+      <div>
+        <a href="index.html" class="font-logo text-4xl text-ink leading-none">Obsidian<span class="text-gold">.</span></a>
+        <p class="text-stone text-sm mt-4 max-w-xs leading-relaxed">A steakhouse built around fire, patience, and precision — one plate at a time.</p>
+      </div>
+      <div>
+        <h5 class="text-xs tracking-[2px] uppercase text-gold mb-5 font-medium">Explore</h5>
+        <ul class="space-y-3 text-sm text-stone">
+          <li><a href="index.html" class="hover:text-gold transition">Home</a></li>
+          <li><a href="about.html" class="hover:text-gold transition">About</a></li>
+          <li><a href="blog.html" class="hover:text-gold transition">Blog</a></li>
+          <li><a href="gallery.html" class="hover:text-gold transition">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-xs tracking-[2px] uppercase text-gold mb-5 font-medium">Visit</h5>
+        <ul class="space-y-3 text-sm text-stone">
+          <li><a href="menu.html" class="hover:text-gold transition">Menu</a></li>
+          <li><a href="index.html#reservation" class="hover:text-gold transition">Reservation</a></li>
+          <li><a href="contact.html" class="hover:text-gold transition">Location</a></li>
+          <li><a href="contact.html#faq" class="hover:text-gold transition">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-xs tracking-[2px] uppercase text-gold mb-5 font-medium">Contact</h5>
+        <ul class="space-y-3 text-sm text-stone">
+          <li><a href="tel:+8801000000000" class="hover:text-gold transition">+880 1XXX-XXXXXX</a></li>
+          <li><a href="mailto:reservations@obsidiansteakhouse.com" class="hover:text-gold transition break-all">reservations@obsidiansteakhouse.com</a></li>
+          <li>14 Ember Lane, Dhaka</li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-line text-xs text-stone text-center">
+      <span>© 2026 Obsidian Steakhouse. All rights reserved.</span>
+      <span>Concept Project – Designed &amp; Developed by Farzana Yesmin</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
