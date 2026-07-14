@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — OBSIDIAN Steakhouse</title>
+<meta name="description" content="Get in touch with OBSIDIAN — reservations, private dining enquiries, directions, and answers to frequently asked questions.">
+<meta name="author" content="Farzana Yesmin">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23211B10'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%23B23A2E' font-family='Georgia,serif'%3EO%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact OBSIDIAN Steakhouse (Concept Project)">
+<meta property="og:description" content="Reservations, directions, and frequently asked questions for a fictional steakhouse concept.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&family=Dancing+Script:wght@600;700&family=Alex+Brush&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="tailwind.browser.js"></script>
+<style>
+  /* ===== Sitewide scale + brand refinements ===== */
+  html{font-size:18px;}                 /* base size bump so all rem-based text reads larger */
+  body{line-height:1.65;}
+  .font-logo{ font-family:'Alex Brush', cursive; letter-spacing:0.5px; }
+</style>
+
+</head>
+<body class="bg-bg text-ink font-body font-normal antialiased">
+
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[10000] focus:bg-gold focus:text-white focus:px-5 focus:py-3 focus:rounded">Skip to main content</a>
+
+<div id="loader" class="fixed inset-0 z-[9999] bg-bg flex items-center justify-center transition-all duration-500">
+  <div class="flex flex-col items-center gap-4 font-logo text-5xl text-gold">
+    Obsidian
+    <div class="relative w-32 h-px bg-line overflow-hidden">
+      <span class="absolute left-[-40%] top-0 bottom-0 w-2/5 bg-gold animate-loaderSweep"></span>
+    </div>
+  </div>
+</div>
+
+<div id="scrollProgress" class="fixed top-0 left-0 h-[3px] bg-gold z-[1100] w-0"></div>
+<button id="backToTop" aria-label="Back to top" class="fixed right-6 bottom-6 md:right-8 md:bottom-8 z-[900] w-12 h-12 rounded-full bg-ink text-goldlight border border-gold/40 flex items-center justify-center opacity-0 invisible translate-y-3 transition-all duration-300 hover:bg-gold hover:text-white">↑</button>
+
+<!-- ================= NAVBAR ================= -->
+<nav id="navbar" class="fixed top-0 inset-x-0 z-50 bg-ink/85 backdrop-blur-md border-b border-white/10 shadow-md shadow-black/10 py-5 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between">
+    <a href="index.html" class="font-logo text-4xl text-white leading-none">Obsidian<span class="text-goldlight">.</span></a>
+    <ul class="hidden md:flex items-center gap-7 lg:gap-9 text-xs tracking-[2px] uppercase">
+      <li><a href="index.html" class="nav-link text-white/70 hover:text-goldlight transition">Home</a></li>
+      <li><a href="about.html" class="nav-link text-white/70 hover:text-goldlight transition">About</a></li>
+      <li><a href="menu.html" class="nav-link text-white/70 hover:text-goldlight transition">Menu</a></li>
+      <li><a href="gallery.html" class="nav-link text-white/70 hover:text-goldlight transition">Gallery</a></li>
+      <li><a href="blog.html" class="nav-link text-white/70 hover:text-goldlight transition">Blog</a></li>
+      <li><a href="contact.html" class="nav-link text-goldlight transition">Contact</a></li>
+      <li><a href="index.html#reservation" class="border border-goldlight text-goldlight px-5 py-2.5 hover:bg-goldlight hover:text-ink transition">Reserve</a></li>
+    </ul>
+    <button id="hamburger" class="md:hidden flex flex-col gap-1.5" aria-label="Menu">
+      <span class="w-6 h-px bg-white transition-transform"></span>
+      <span class="w-6 h-px bg-white transition-opacity"></span>
+      <span class="w-6 h-px bg-white transition-transform"></span>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden flex-col gap-6 bg-ink/95 backdrop-blur-md border-t border-white/10 px-6 py-8 mt-6 text-sm uppercase tracking-[2px]">
+    <a href="index.html" class="nav-link text-white/70">Home</a>
+    <a href="about.html" class="nav-link text-white/70">About</a>
+    <a href="menu.html" class="nav-link text-white/70">Menu</a>
+    <a href="gallery.html" class="nav-link text-white/70">Gallery</a>
+    <a href="blog.html" class="nav-link text-white/70">Blog</a>
+    <a href="contact.html" class="nav-link text-goldlight">Contact</a>
+    <a href="index.html#reservation" class="inline-block w-fit border border-goldlight text-goldlight px-5 py-2.5">Reserve</a>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- ================= PAGE HERO BANNER ================= -->
+<section class="pt-40 pb-24 md:pt-48 md:pb-28 bg-ink text-white relative overflow-hidden">
+  
+  <div class="absolute inset-0 z-0">
+    <img src="img/How to Create a Restaurant App_ An Essential Guide for Business Owners.jpg" alt="Luxury restaurant atmosphere" class="w-full h-full object-cover" loading="eager" fetchpriority="high">
+    <div class="absolute inset-0 bg-ink/65 backdrop-blur-[1px]"></div>
+  </div>
+
+  <div class="absolute -left-32 -top-32 w-96 h-96 rounded-full bg-gold/10 blur-3xl pointer-events-none z-1"></div>
+  <div class="absolute -right-24 bottom-0 w-72 h-72 rounded-full bg-gold/10 blur-3xl pointer-events-none z-1"></div>
+  
+  <div class="max-w-3xl mx-auto px-6 text-center relative z-10 fade-up opacity-0 translate-y-8 transition-all duration-700">
+    <span class="inline-flex items-center gap-2 text-goldlight text-xs tracking-[3px] uppercase mb-5">
+      <span class="w-1.5 h-1.5 rounded-full bg-goldlight"></span> Contact Us
+    </span>
+    <h1 class="font-heading text-5xl md:text-6xl mb-5">Get in Touch With <em class="italic text-goldlight">Our Team</em></h1>
+    <p class="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto">Questions about reservations, private dining, or the menu? We're ready to help.</p>
+  </div>
+</section>
+
+<!-- ================= FORM + INFO ================= -->
+<section class="py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-2 gap-14">
+    <div class="fade-up opacity-0 translate-y-8 transition-all duration-700 bg-card p-8 md:p-12">
+      <h2 class="font-heading text-3xl mb-2">Get in Touch</h2>
+      <p class="text-stone text-sm mb-8">Reach out directly through any of the channels below — we'd love to hear from you.</p>
+      <form data-emailjs-form class="space-y-6">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="!absolute !-left-[9999px] !w-px !h-px !opacity-0" aria-hidden="true">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div><label class="block text-[11px] tracking-[1.5px] uppercase text-stone mb-2">Name</label><input type="text" name="name" required placeholder="Your full name" aria-label="Name" class="w-full border-b border-ink/20 py-2.5 text-sm bg-transparent focus:outline-none focus:border-gold"></div>
+          <div><label class="block text-[11px] tracking-[1.5px] uppercase text-stone mb-2">Email</label><input type="email" name="email" required placeholder="Your email address" aria-label="Email" class="w-full border-b border-ink/20 py-2.5 text-sm bg-transparent focus:outline-none focus:border-gold"></div>
+        </div>
+        <div>
+          <label class="block text-[11px] tracking-[1.5px] uppercase text-stone mb-2">Subject</label>
+          <select name="subject" required aria-label="Subject" class="w-full border-b border-ink/20 py-2.5 text-sm bg-transparent focus:outline-none focus:border-gold">
+            <option value="">Select a subject</option>
+            <option>Reservation Enquiry</option>
+            <option>Private Dining</option>
+            <option>Feedback</option>
+            <option>Careers</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div><label class="block text-[11px] tracking-[1.5px] uppercase text-stone mb-2">Message</label><textarea name="message" rows="4" placeholder="Type your message here..." aria-label="Message" class="w-full border-b border-ink/20 py-2.5 text-sm bg-transparent focus:outline-none focus:border-gold resize-none"></textarea></div>
+        <button type="submit" class="bg-gold text-white px-9 py-4 text-xs tracking-[2.5px] uppercase hover:bg-wine hover:-translate-y-1 transition-all duration-300">Send Message</button>
+        <p class="form-msg text-gold text-xs min-h-[16px]"></p>
+      </form>
+    </div>
+
+    <div class="fade-up opacity-0 translate-y-8 transition-all duration-700 delay-150">
+      <span class="inline-block text-xs tracking-[3px] uppercase text-gold mb-4">Contact Information</span>
+      <h2 class="font-heading text-3xl md:text-4xl mb-10 leading-tight">Let's talk — just <em class="italic text-gold">a click away</em></h2>
+      <div class="divide-y divide-line border-t border-b border-line">
+        <div class="flex items-center justify-between py-6">
+          <span class="text-xs tracking-[1.5px] uppercase text-stone">Phone</span>
+          <a href="tel:+8801234567890" class="text-ink hover:text-gold transition">+880 1234-567890 ↗</a>
+        </div>
+        <div class="flex items-center justify-between py-6">
+          <span class="text-xs tracking-[1.5px] uppercase text-stone">Email</span>
+          <a href="mailto:reservations@obsidiansteakhouse.com" class="text-ink hover:text-gold transition">reservations@obsidiansteakhouse.com ↗</a>
+        </div>
+        <div class="flex items-center justify-between py-6 gap-4">
+          <span class="text-xs tracking-[1.5px] uppercase text-stone whitespace-nowrap">Location</span>
+          <span class="text-ink text-right">14 Ember Lane, Uptown District, Dhaka</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MAP ================= -->
+<section class="pb-24 md:pb-32">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 fade-up opacity-0 translate-y-8 transition-all duration-700">
+    <iframe
+      src="https://www.google.com/maps?q=Dhaka,Bangladesh&output=embed"
+      class="w-full h-96 md:h-[460px] border border-line grayscale-[15%]"
+      style="filter: grayscale(15%);"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Obsidian Steakhouse location map">
+    </iframe>
+    <div class="text-center mt-8">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Dhaka,Bangladesh" target="_blank" rel="noopener" class="inline-flex items-center gap-2 border border-gold text-gold px-8 py-3.5 text-xs tracking-[2.5px] uppercase hover:bg-gold hover:text-white transition-all duration-300">
+        Get Directions ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq" class="py-24 md:py-32 bg-card">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="fade-up opacity-0 translate-y-8 transition-all duration-700 inline-block text-xs tracking-[3px] uppercase text-gold mb-4">Frequently Asked Questions</span>
+      <h2 class="fade-up opacity-0 translate-y-8 transition-all duration-700 delay-100 font-heading text-4xl md:text-5xl">Still curious? <em class="italic text-gold">We've got answers</em></h2>
+    </div>
+    <div class="space-y-0 divide-y divide-line border-t border-b border-line">
+      <div class="faq-item fade-up opacity-0 translate-y-8 transition-all duration-700 py-6">
+        <button class="faq-question w-full flex items-center justify-between text-left font-heading text-xl">Do you take walk-ins? <span class="faq-icon text-stone transition-transform duration-300">⌄</span></button>
+        <div class="faq-answer hidden mt-4 text-stone text-sm leading-relaxed max-w-2xl">We welcome walk-ins at the bar and lounge, but the main dining room is reservation-only most evenings — especially weekends.</div>
+      </div>
+      <div class="faq-item fade-up opacity-0 translate-y-8 transition-all duration-700 delay-100 py-6">
+        <button class="faq-question w-full flex items-center justify-between text-left font-heading text-xl">Is there a dress code? <span class="faq-icon text-stone transition-transform duration-300">⌄</span></button>
+        <div class="faq-answer hidden mt-4 text-stone text-sm leading-relaxed max-w-2xl">Smart casual or above. We ask that guests avoid beachwear, sportswear, and flip-flops.</div>
+      </div>
+      <div class="faq-item fade-up opacity-0 translate-y-8 transition-all duration-700 delay-150 py-6">
+        <button class="faq-question w-full flex items-center justify-between text-left font-heading text-xl">Can you accommodate dietary restrictions? <span class="faq-icon text-stone transition-transform duration-300">⌄</span></button>
+        <div class="faq-answer hidden mt-4 text-stone text-sm leading-relaxed max-w-2xl">Yes — let us know at the time of booking and our kitchen will prepare suitable alternatives for most allergies and dietary needs.</div>
+      </div>
+      <div class="faq-item fade-up opacity-0 translate-y-8 transition-all duration-700 delay-200 py-6">
+        <button class="faq-question w-full flex items-center justify-between text-left font-heading text-xl">Do you offer private dining? <span class="faq-icon text-stone transition-transform duration-300">⌄</span></button>
+        <div class="faq-answer hidden mt-4 text-stone text-sm leading-relaxed max-w-2xl">Our private room seats up to 14 guests and includes a dedicated server and custom tasting menu — enquire through the contact form above.</div>
+      </div>
+      <div class="faq-item fade-up opacity-0 translate-y-8 transition-all duration-700 delay-300 py-6">
+        <button class="faq-question w-full flex items-center justify-between text-left font-heading text-xl">What's your cancellation policy? <span class="faq-icon text-stone transition-transform duration-300">⌄</span></button>
+        <div class="faq-answer hidden mt-4 text-stone text-sm leading-relaxed max-w-2xl">We ask for at least 24 hours' notice. Same-day cancellations for parties of 6+ may incur a small fee.</div>
+      </div>
+      <div class="faq-item fade-up opacity-0 translate-y-8 transition-all duration-700 delay-[350ms] py-6">
+        <button class="faq-question w-full flex items-center justify-between text-left font-heading text-xl">Do you validate parking? <span class="faq-icon text-stone transition-transform duration-300">⌄</span></button>
+        <div class="faq-answer hidden mt-4 text-stone text-sm leading-relaxed max-w-2xl">Complimentary valet parking is available for all dine-in guests at the main entrance.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= NEWSLETTER BAND ================= -->
+<section class="bg-ink text-white py-20">
+  <div class="max-w-2xl mx-auto text-center px-6 fade-up opacity-0 translate-y-8 transition-all duration-700">
+    <span class="inline-block text-goldlight text-xs tracking-[3px] uppercase mb-4">Stay Connected</span>
+    <h2 class="font-heading text-4xl md:text-5xl mb-5">Join the <em class="italic text-goldlight">Table</em></h2>
+    <p class="text-white/60 mb-8 text-sm">Seasonal menus, private dining invites, and dry-age release notes — straight to your inbox.</p>
+    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="event.preventDefault(); this.reset(); this.querySelector('.sub-msg').classList.remove('hidden');">
+      <input type="email" required placeholder="Your email address" aria-label="Email address" class="flex-1 bg-transparent border border-white/25 px-5 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-goldlight">
+      <button type="submit" class="bg-goldlight text-ink px-6 py-3 text-xs tracking-[2px] uppercase hover:bg-white transition">Subscribe</button>
+    </form>
+    <p class="sub-msg hidden text-goldlight text-xs mt-4">Thank you for subscribing.</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-bg border-t border-line pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-10 mb-14 fade-up opacity-0 translate-y-8 transition-all duration-700">
+      <div>
+        <a href="index.html" class="font-logo text-4xl text-ink leading-none">Obsidian<span class="text-gold">.</span></a>
+        <p class="text-stone text-sm mt-4 max-w-xs leading-relaxed">A steakhouse built around fire, patience, and precision — one plate at a time.</p>
+      </div>
+      <div>
+        <h5 class="text-xs tracking-[2px] uppercase text-gold mb-5 font-medium">Explore</h5>
+        <ul class="space-y-3 text-sm text-stone">
+          <li><a href="index.html" class="hover:text-gold transition">Home</a></li>
+          <li><a href="about.html" class="hover:text-gold transition">About</a></li>
+          <li><a href="blog.html" class="hover:text-gold transition">Blog</a></li>
+          <li><a href="gallery.html" class="hover:text-gold transition">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-xs tracking-[2px] uppercase text-gold mb-5 font-medium">Visit</h5>
+        <ul class="space-y-3 text-sm text-stone">
+          <li><a href="menu.html" class="hover:text-gold transition">Menu</a></li>
+          <li><a href="index.html#reservation" class="hover:text-gold transition">Reservation</a></li>
+          <li><a href="contact.html" class="hover:text-gold transition">Location</a></li>
+          <li><a href="contact.html#faq" class="hover:text-gold transition">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-xs tracking-[2px] uppercase text-gold mb-5 font-medium">Contact</h5>
+        <ul class="space-y-3 text-sm text-stone">
+          <li><a href="tel:+8801234567890" class="hover:text-gold transition">+880 1234-567890</a></li>
+          <li><a href="mailto:reservations@obsidiansteakhouse.com" class="hover:text-gold transition break-all">reservations@obsidiansteakhouse.com</a></li>
+          <li>14 Ember Lane, Dhaka</li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-line text-xs text-stone text-center">
+      <span>© 2026 Obsidian Steakhouse. All rights reserved.</span>
+      <span>Concept Project – Designed &amp; Developed by Farzana Yesmin</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
